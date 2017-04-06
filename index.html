@@ -8,30 +8,73 @@
     <meta charset=UTF-8>
     <meta content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" name=viewport>
     <link href=Webtop-favicon.png rel=icon>
+    <script>
+      var imgDummy = ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAIAAAQAASDSLW8AAAAASUVORK5CYII="'
+      //, baseIP = 'https://stewved.github.io/'
+      , baseIP = 'http://127.0.0.1/edsa-github/'
+      , gs = baseIP + 'globalscripts/'//for general stuff, like images and scripts.
+      , imgSocs = 'style="background:center/contain no-repeat url(\'' + gs + 'images/'
+      ;
+    </script>
+    <script type="text/javascript" src="http://127.0.0.1/edsa-github/globalscripts/gtexts.js"></script>
     <style>
       html {
-        height: 98%;
-        margin: 1%;
-        padding: 0;
-        background-color: #202740;
-        background: linear-gradient(to right,#202840,#304460,#202840);
+        background: linear-gradient(to right,hsl(0, 0%, 90%),hsl(0, 0%, 100%),hsl(0, 0%, 90%));
       }
 
       body {
         text-align: center;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        color: #dfdbd2;
         font-family: sans-serif;
+        overflow-x: hidden;
+        margin: .5em .5em .5em 1em;
+      }
+
+      .B {
+        font-weight: 700;
+      }
+
+      .btn {
+        height: 3.7em;
+        width: 10em;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        margin: .1em;
+        padding: .3em;
+        color: black;
+        border: 1px solid black;
+        box-shadow: 0 0 10px hsla(0,0%,0%,.5);
+        border-radius: .75em;
+      }
+
+      .btnGrey {
+        background-color: #d5d5d5;
+        background: linear-gradient(#eee, #999);
+        transition: background 0.5s;
+      }
+
+      .btnGrey:hover {
+        background-color: #dfdfdf;
+        background: linear-gradient(#fff, #aaa);
+      }
+
+      .btnGrey:active {
+        background: linear-gradient(#ddd, #888);
+        border: 1px solid #c28167;
+      }
+
+      .imgSocs {
+        width: 40%;
+        vertical-align: middle;
+        cursor: default;
       }
 
       .ubLink {
         font-weight: 700;
         text-decoration: underline;
-        color: #ffe;
         transition: opacity .4s;
         opacity: .7;
+        color: black;
       }
 
       .ubLink:hover {
@@ -39,108 +82,138 @@
         opacity: 1;
       }
 
-      .B {
-        font-weight: 700;
-      }
-      .btn {
-          height:51px;
-          width:160px;
-          display:inline-block;
-          text-align: center;
-          text-decoration:none;
-          margin: 4px;
-          padding: 1px 4px;
-          color: #000;
-          border: 1px solid #a7a7a7;
-          border-radius: 6px;
-      }
-
       .btnGrey {
-          background-color: #d5d5d5;
-          background: linear-gradient(#eee, #999);
-          transition: background 0.5s;
+        background-color: #d5d5d5;
+        background: linear-gradient(#eee, #999);
+        transition: background 0.5s;
       }
 
       .btnGrey:hover {
-          background-color: #dfdfdf;
-          background: linear-gradient(#fff, #aaa);
+        background-color: #dfdfdf;
+        background: linear-gradient(#fff, #aaa);
       }
 
       .btnGrey:active {
-          background: linear-gradient(#ddd, #888);
-          border: 1px solid #c28167;
+        background: linear-gradient(#ddd, #888);
+        border: 1px solid #c28167;
       }
-      .imgSocs {
-        width:40%;
-        vertical-align: middle;
-        cursor: default;
+
+      .expoIcon {
+        border-radius: 1em;
+        border: .1em solid black;
+        box-shadow: 0 0 10px hsla(0,0%,0%,.5);
+        position: relative;
+        float: left;
+        margin: .3em;
+        transition: background .8s;
       }
+      .expoIconN {
+        background: radial-gradient(hsla(0, 0%, 80%, 0.5), hsla(0, 0%, 40%, 0.5));
+      }
+      .expoIconH {
+        background: radial-gradient(hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 60%, 0.5));
+      }
+
+      .expoImg {
+        width: 4em;
+        margin: 1em 2em 0 2em;
+      }
+
+      .expoName {
+        position: relative;
+        text-align: center;
+        margin: .0 .5em 1em .5em;
+        width: 7.5em;
+      }
+      .expoCover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
     </style>
   </head>
-  <body onResize="reSize()">
-    <div>
-      <h1 style="color:#fff;text-shadow:0 0 6px;font-size:2.75em">
-        <a class="ubLink" href="https://github.com/StewVed" target="_blank">StewVed on GitHub</a>
-      </h1>
-      <p>
-        My pride and joy project is <a class="ubLink" href="http://stewved.co.uk" target="_blank">StewVed's Webtop</a>.<br>
-        My <a class="ubLink" href="https://stewved.github.io/gameTemplate/" target="_blank">HTML5 game template</a> on GitHub.<br>
-        My <a class="ubLink" href="https://stewved.github.io/Memguess/" target="_blank">Memory &Guessing game</a> on GitHub.<br>
-      </p>
-      <hr>
-    </div>
-    <div>
-      <h2 style="margin-bottom:0;">tips & support:</h2>
-    <div id="tipsup">
-      <div class="btn btnGrey">
-        <a href="https://www.patreon.com/stewved" target="_blank">
-          <img class="imgSocs" style="width:160px;height:51px;background:center/contain no-repeat url('images/Patreon.png');cursor:pointer;display:inline-block;" src="images/dummy.png">
-        </a>
-      </div>
+  <body onResize="resize()">
+    <h1 style="color:black;text-shadow:0 0 6px black;font-size:2em">
+      <a class="ubLink" href="https://github.com/StewVed" target="_blank">StewVed's WebApps<br>on GitHub</a>
+    </h1>
+    <div id="appList" style="position: relative;"></div>
+    <br style="clear:both;">
+    <hr>
+    <div id="stuff"></div>
 
-      <form class="btn btnGrey" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="RJMCJX2TE8E4Y">
-        <input type="image" name="submit" class="imgSocs" style="outline:none;width:160px;height:51px;background:center/contain no-repeat url(images/PaypalDonate.png);color:hsla(0, 0%, 0%, 0);">
-      </form>
-  
-    </div>
-    </div>
-    <hr>
-    <div style="text-align:left;">
-      <img alt="The Author" src=images/StewVed.jpg style="float:left;border-radius:6px;width:15%;margin-bottom:1.5%">
-      <h1 style="text-align:center;padding:4% 0 4% 0;">About the devloper:</h1>
-      <p>
-        Stewart Robinson (StewVed) was born in the United Kingdom, in the late 1970's.
-      </p>
-      <p>
-        He learned just about everything he knows about HTML/CSS/JavaScript programming from 
-        <a class="ubLink" href="http://www.w3schools.com" target="_blank">W3Schools</a>.
-      </p>
-      <p>
-        He is a PC Gamer at heart, and though he generally games on Windows, he uses Linux. Namely: 
-        <a class="ubLink" href="http://www.ubuntu.com" target="_blank">Ubuntu OS</a>, and 
-        <a class="ubLink" href="https://ubuntugnome.org" target="_blank">Ubuntu Gnome</a>.
-      </p>
-    </div>
-    <hr>
-    <div>
-      <h1 style=margin-bottom:0;font-size:1.75em>StewVed's standard notice:</h1>
-      <p style=font-size:1em;color:red;margin-top:0>
-        Warning: May contain Bugs!<br>
-        Cannot guarantee Bug free!<br>
-        Produced on a system where Buggy products are also made!
-      </p>
-    </div>
-    <div id=crn>
-      <h2>
-        Created by <span class=toolTipclass id=cpContact>Stewart Robinson</span> (StewVed)
-      </h2>
-    </div>
     <script>
-      reSize();
-      function reSize() {
-        document.body.style.fontSize = (document.body.offsetWidth * .2) + '%';
+      var webapps = [
+        ['Audio Testing app', 'audiotester']
+      , ['Calorie & Body Fat Calculator', 'calorieCalculator']
+      , ['Memory & Guessing game', 'memguess']
+      , ['Tilt Ball Challenge', 'tiltballchallenge']
+      , ['Toddler Learning game', 'toddlearner']
+      , ['Toddler Colors game', 'toddlercolors']
+      //, ['', '']
+      ]
+      , appLinks = ''
+      ;
+      //add content about the developer, and disclaimer here.
+      document.getElementById('stuff').innerHTML =
+        appTips + '<hr>' + appAbout;
+
+      //create a big square button for each app (code adapted from Webtop)
+      for (app of webapps) {
+        var zTitle = app[0].replace(/'/g, "\'");
+        appLinks +=
+          '<div id="eC_' + app[1] + '" class="expoIcon expoIconN" >'
+          + '<img id="eL_' + app[1] + '" class="expoImg" '
+          + ' style="background:center/contain no-repeat url(\''
+          + baseIP + app[1] + '/favicon.svg\');"' + imgDummy + '>'
+          + '<div id="eN_' + app[1] + '" class="expoName">' + zTitle + '</div>'
+          + '<div id="eA_' + app[1] + '" class="expoCover" onmouseover="iconHover(this.id, 1)" onmouseout="iconHover(this.id, 0)" onclick="openLink(this.id)"></div>'
+        + '</div>';
+      }
+
+      document.getElementById('appList').innerHTML = appLinks;
+      resize();
+
+      function resize() {
+        //find out the right-most app in the applist.
+        //There is probably a much better way of doing this...lol
+        var rightMost = 0
+        , iconWidth = 0
+        ;
+        /*
+          go through the entire list of app icons, and if the current
+          icon is further to the right than the rightMost Var, then
+          replace the Var's data with the current icon's offsetLeft
+        */
+        var zAppIcons = document.getElementsByClassName('expoIcon');
+        if (zAppIcons.length > 0) {
+          iconWidth = zAppIcons[0].offsetWidth; //doesn't include margin!
+          for (var zApp of zAppIcons) {
+            if (zApp.offsetLeft > rightMost) {
+              rightMost = zApp.offsetLeft;
+            }
+          }
+        }
+        var zWidth = ((document.body.offsetWidth - (rightMost + iconWidth)) / 2).toFixed(0);
+        document.getElementById('appList').style.left = zWidth + 'px';
+      }
+
+      function iconHover(zId, y) {
+          var zName = zId.split('_')[1];
+          if (y) {
+            document.getElementById('eC_' + zName).classList.remove('expoIconN');
+            document.getElementById('eC_' + zName).classList.add('expoIconH');
+          } else {
+            document.getElementById('eC_' + zName).classList.remove('expoIconH');
+            document.getElementById('eC_' + zName).classList.add('expoIconN');
+          }
+      }
+
+      function openLink(zId) {
+        var zName = zId.split('_')[1];
+        window.open(baseIP + zName, "_blank");
       }
     </script>
   </body>
