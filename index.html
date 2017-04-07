@@ -156,10 +156,7 @@
       ]
       , appLinks = ''
       ;
-      //add content about the developer, and disclaimer here.
-      document.getElementById('stuff').innerHTML =
-        appTips + '<hr>' + appAbout;
-
+      
       //create a big square button for each app (code adapted from Webtop)
       for (app of webapps) {
         var zTitle = app[0].replace(/'/g, "\'");
@@ -209,6 +206,17 @@
             document.getElementById('eC_' + zName).classList.remove('expoIconH');
             document.getElementById('eC_' + zName).classList.add('expoIconN');
           }
+      }
+
+      function addStuff() {
+        if (appTips) {
+          //add content about the developer, and disclaimer here.
+          document.getElementById('stuff').innerHTML =
+          appTips + '<hr>' + appAbout;
+        }
+        else {
+          window.setTimeout(function(){addStuff()}, 50);
+        }
       }
 
       function openLink(zId) {
