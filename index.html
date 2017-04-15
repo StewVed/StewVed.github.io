@@ -33,36 +33,6 @@
         font-weight: 700;
       }
 
-      .btn {
-        height: 3.7em;
-        width: 10em;
-        display: inline-block;
-        text-align: center;
-        text-decoration: none;
-        margin: .1em;
-        padding: .3em;
-        color: black;
-        border: 1px solid black;
-        box-shadow: 0 0 10px hsla(0,0%,0%,.5);
-        border-radius: .75em;
-      }
-
-      .btnGrey {
-        background-color: #d5d5d5;
-        background: linear-gradient(#eee, #999);
-        transition: background 0.5s;
-      }
-
-      .btnGrey:hover {
-        background-color: #dfdfdf;
-        background: linear-gradient(#fff, #aaa);
-      }
-
-      .btnGrey:active {
-        background: linear-gradient(#ddd, #888);
-        border: 1px solid #c28167;
-      }
-
       .imgSocs {
         width: 40%;
         vertical-align: middle;
@@ -80,22 +50,6 @@
       .ubLink:hover {
         transition: opacity .3s;
         opacity: 1;
-      }
-
-      .btnGrey {
-        background-color: #d5d5d5;
-        background: linear-gradient(#eee, #999);
-        transition: background 0.5s;
-      }
-
-      .btnGrey:hover {
-        background-color: #dfdfdf;
-        background: linear-gradient(#fff, #aaa);
-      }
-
-      .btnGrey:active {
-        background: linear-gradient(#ddd, #888);
-        border: 1px solid #c28167;
       }
 
       .expoIcon {
@@ -156,7 +110,7 @@
       ]
       , appLinks = ''
       ;
-      
+
       //create a big square button for each app (code adapted from Webtop)
       for (app of webapps) {
         var zTitle = app[0].replace(/'/g, "\'");
@@ -213,7 +167,7 @@
         if (window['appTips']) {
           //add content about the developer, and disclaimer here.
           document.getElementById('stuff').innerHTML =
-          appTips + '<hr>' + appAbout;
+          appTips + '<hr>' + appAbout + appAboutEx + appBugs;
         }
         else {
           window.setTimeout(function(){addStuff()}, 50);
