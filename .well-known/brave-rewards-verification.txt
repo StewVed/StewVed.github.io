@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: stewved.github.io
+Token: 47e8478aa327a47cd0047d498cf602622d26ffac0ddd070c0c30846680796cf4
