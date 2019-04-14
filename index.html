@@ -9,7 +9,9 @@
     <link rel="icon" href="favicon.png">
     <link rel="icon" href="favicon256.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
+    <link rel="stylesheet" href="../globalscripts/gStyles.css">
+    <script src="../globalscripts/gtexts.js"></script>
+<!--- https://stewved.github.io
     <script>
       var imgDummy = ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAIAAAQAASDSLW8AAAAASUVORK5CYII="'
       , baseIP = 'https://stewved.github.io/'
@@ -18,6 +20,7 @@
       ;
       var a=document.createElement('script');a.src=gs+'gtexts.js';document.head.appendChild(a);
     </script>
+    -->
     <style>
       html {
         background: linear-gradient(to right,hsl(0, 0%, 90%),hsl(0, 0%, 100%),hsl(0, 0%, 90%));
@@ -26,51 +29,8 @@
         text-align: center;
         font-family: sans-serif;
         overflow-x: hidden;
+        overflow-y: auto;
         margin: .5em .5em .5em 1em;
-      }
-      .B {
-        font-weight: 700;
-      }
-      .tipButton {
-        box-sizing: border-box;
-        box-shadow: 0 0 8px hsla(0,0%,0%,.5);
-        width: 45%;
-        display: inline-block;
-        text-decoration: none;
-        margin: 1%;
-        padding: 2%;
-        overflow:hidden;
-        color: black;
-        border: 2px solid black;
-        border-radius: 100%;
-        box-shadow: 0em 0em 1% 1% black;
-        background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 95%), hsl(0, 0%, 33%));
-        transition: 0.7s;
-      }
-      .tipButton:hover {
-        background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 100%), hsl(0, 0%, 50%));
-        box-shadow: 0 0 16px hsla(0,0%,0%,0.7);
-        transition: 0.2s;
-      }
-      .tipButton:active {
-        background: radial-gradient(circle at 25% 25%, hsl(0, 0%, 80%), hsl(0, 0%, 20%));
-      }
-
-      .imgSocs {
-        width: 40%;
-        vertical-align: middle;
-        cursor: default;
-      }
-      .ubLink {
-        font-weight: 700;
-        text-decoration: underline;
-        transition: opacity .7s;
-        opacity: .7;
-        color: black;
-      }
-      .ubLink:hover {
-        transition: opacity .3s;
-        opacity: 1;
       }
       .expoIcon {
         border-radius: 2em;
@@ -140,9 +100,9 @@
 
       function addStuff() {
         if (window['supportStewved']) {
-          //add content about the developer, and disclaimer here.
+          //add support stuff, about me, and disclaimer here.
           document.getElementById('stuff').innerHTML =
-          supportStewved + '<hr>' + appAbout + appAboutEx + appBugs;
+          supportStewved + appAbout + appAboutEx + appBugs;
         }
         else {
           window.setTimeout(function(){addStuff()}, 50);
