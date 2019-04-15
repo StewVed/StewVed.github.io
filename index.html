@@ -9,7 +9,7 @@
     <link rel="icon" href="favicon.png">
     <link rel="icon" href="favicon256.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="../globalscripts/gStyles.css">
+    <link rel="stylesheet" href="../globalscripts/gstyles.css">
     <script src="../globalscripts/gtexts.js"></script>
 
     <style>
@@ -21,7 +21,7 @@
         font-family: sans-serif;
         overflow-x: hidden;
         overflow-y: auto;
-        margin: .5em .5em .5em 1em;
+        margin: .5em;
       }
       .expoIcon {
         border-radius: 2em;
@@ -49,7 +49,6 @@
         width: 7.5em;
         cursor: pointer;
       }
-
     </style>
   </head>
   <body>
@@ -90,6 +89,13 @@
       addStuff();
 
       function addStuff() {
+        /*
+          wait for globalscripts gtexts.js to be loaded.
+          simply look for any variable stored in this file
+          to determine whether it has been added yet.
+          If not, wait a bit and try again.
+        */
+
         if (window['supportStewved']) {
           //add support stuff, about me, and disclaimer here.
           document.getElementById('stuff').innerHTML =
@@ -101,8 +107,7 @@
       }
 
       function openLink(zId) {
-        var zName = zId.split('_')[1];
-        window.open(baseIP + zName, "_blank");
+        window.open(baseIP + zId.split('_')[1], "_blank");
       }
     </script>
   </body>
