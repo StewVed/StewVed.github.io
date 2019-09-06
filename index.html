@@ -6,6 +6,11 @@
     <meta content="StewVed,stewart,robinson,webapp,free,program,app,webtop,html5,javascript, open, source" name=keywords>
     <meta content="Stewart Robinson (StewVed)" name=author>
     <meta charset="UTF-8">
+    <script>
+      //from globalscripts/loader.js - only need these two lines.
+      var baseIP = window.location.href.slice(0,window.location.href.lastIndexOf('/', window.location.href.length - 2)) // woz 'https://stewved.github.io/' but I shouldn't hardcode.
+      , gs = baseIP + '/globalscripts/'//for general stuff, like images and scripts.
+    </script>
     <link rel="icon" href="favicon.png">
     <link rel="icon" href="favicon256.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -64,11 +69,11 @@
       var webapps = [
         ['Audio Testing app &nbsp;&nbsp;&nbsp;&nbsp;', 'audiotester']
       , ['Calorie & Body Fat Calculator', 'calorieCalculator']
+      , ['Food & calorie manager', 'calorieWatcher']
       , ['Memory & Guessing game', 'memguess']
-      , ['Tilt Ball Challenge', 'tiltballchallenge']
+      /*, ['Tilt Ball Challenge', 'tiltballchallenge']*/
       , ['Toddler Learning game', 'toddlearner']
       , ['Toddler Colors game', 'toddlercolors']
-      //, ['', '']
       ]
       , appLinks = ''
       ;
@@ -77,10 +82,10 @@
       for (app of webapps) {
         var zTitle = app[0].replace(/'/g, "\'");
         appLinks +=
-          '<div id="eC_' + app[1] + '" class="expoIcon" onclick="openLink(this.id)">'
+          '<div id="eC_' + app[1] + '" class="expoIcon">'
           + '<img id="eL_' + app[1] + '" class="expoImg" '
           + ' style="background:center/contain no-repeat url(\''
-          + baseIP + app[1] + '/favicon.svg\');"' + imgDummy + '>'
+          + baseIP + '/' + app[1] + '/favicon.svg\');"' + imgDummy + '>'
           + '<div id="eN_' + app[1] + '" class="expoName">' + zTitle + '</div>'
         + '</div>';
       }
@@ -100,6 +105,14 @@
           //add support stuff, about me, and disclaimer here.
           document.getElementById('stuff').innerHTML =
           supportStewved + appAbout + appAboutEx + appBugs;
+          /*
+            inline html onclick="openLink(this.id)" doesn't appear to work with touch,
+            but if I add eventlisteners for click, they seem to work with touch just fine!
+          */
+          for (app of webapps) {
+            //
+            document.getElementById('eC_' + app[1]).addEventListener('click', function(){openLink(this.id);}, false);
+          }
         }
         else {
           window.setTimeout(function(){addStuff()}, 50);
@@ -107,7 +120,7 @@
       }
 
       function openLink(zId) {
-        window.open(baseIP + zId.split('_')[1], "_blank");
+        window.open(baseIP + '/' + zId.split('_')[1], "_blank");
       }
     </script>
   </body>
