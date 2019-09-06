@@ -8,8 +8,16 @@
     <meta charset="UTF-8">
     <script>
       //from globalscripts/loader.js - only need these two lines.
-      var baseIP = window.location.href.slice(0,window.location.href.lastIndexOf('/', window.location.href.length - 2)) // woz 'https://stewved.github.io/' but I shouldn't hardcode.
-      , gs = baseIP + '/globalscripts/'//for general stuff, like images and scripts.
+      var baseIP
+      //a single site with no extra folder like https://stewved.github.io/ will be the base
+      if ((window.location.origin + '/') === window.location.href) {
+        baseIP = window.location.origin
+      } else { //find 1 folder up. https://stewved.github.io/blah/ = https://stewved.github.io
+        baseIP = window.location.href.slice(0,window.location.href.lastIndexOf('/', window.location.href.length - 2)) // woz 'https://stewved.github.io/' but I shouldn't hardcode.
+      }
+
+      var gs = baseIP + '/globalscripts/'//for general stuff, like images and scripts.
+
     </script>
     <link rel="icon" href="favicon.png">
     <link rel="icon" href="favicon256.png">
