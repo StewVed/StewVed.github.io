@@ -3,7 +3,7 @@
   <head>
     <title>StewVed's GitHub Website</title>
     <meta content="The GitHub homepage for Stewart Robinson (StewVed)" name=description>
-    <meta content="StewVed,stewart,robinson,webapp,free,program,app,webtop,html5,javascript, open, source" name=keywords>
+    <meta content="StewVed,stewart robinson,webapp,free,app,open,source,FOSS,html5,javascript" name=keywords>
     <meta content="Stewart Robinson (StewVed)" name=author>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,7 +76,8 @@
 
     <script>
       var webapps = [
-        ['Audio Testing app &nbsp;&nbsp;&nbsp;&nbsp;', 'audiotester']
+        ['30 Plants', '30Plants']
+      , ['Audio Testing app &nbsp;&nbsp;&nbsp;&nbsp;', 'audiotester']
       , ['Calorie & Body Fat Calculator', 'calorieCalculator']
       , ['Food & calorie manager', 'calorieWatcher']
       , ['Memory & Guessing game', 'memguess']
@@ -110,10 +111,9 @@
           If not, wait a bit and try again.
         */
 
-        if (window['supportStewved']) {
+        if (window['appAbout']) {
           //add support stuff, about me, and disclaimer here.
-          document.getElementById('stuff').innerHTML =
-          supportStewved + appAbout + appAboutEx + appBugs;
+          document.getElementById('stuff').innerHTML = appAbout + appAboutEx + appBugs;
           /*
             inline html onclick="openLink(this.id)" doesn't appear to work with touch,
             but if I add eventlisteners for click, they seem to work with touch just fine!
